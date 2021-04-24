@@ -14,8 +14,12 @@ The overall algorithm of this method is described below:
 <img src="https://user-images.githubusercontent.com/57039745/115951501-0d0b2b80-a4af-11eb-9bb5-948ad7a74e93.png" width="400" height="300" />
 </div>
 <br/>
-
 The main script to run is [norm_sparsity_code/test_blind_deconv.m](https://github.com/dlteif/CS585-final-project/blob/master/norm_sparsity_code/test_blind_deconv.m)
+
+#### Result
+To the left is the original data and to the right is the deblurred.
+![output](https://github.com/dlteif/CS585-final-project/blob/master/data/ms_blind_deconv.gif)
+
 
 ## DL Methods
 ### 1. DeblurGAN
