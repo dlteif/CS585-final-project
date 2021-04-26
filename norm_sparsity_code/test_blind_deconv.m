@@ -54,14 +54,18 @@ opts.use_ycbcr = 1;
 
 % From Cho/Lee et. al. SIGGRAPH Asia 2009
 vidObj = VideoReader('original.mp4');
-writer = VideoWriter('ms_blind_conv/output.mp4');
+writer = VideoWriter('data/ms_blind_conv/output.mp4');
 open(writer);
 i = 0;
-filename = 'ms_blind_conv/output.gif';
+frpath = ['results/ground_truth/' num2str(i) '_gt.png'];
+fprintf('%s\n', frpath);
+filename = 'data/ms_blind_conv/output.gif';
 endFrame = 2 * vidObj.FrameRate;
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     [blur, deblur, kernel, opts] = ms_blind_deconv(vidFrame, opts);
+    imwrite(vidFrame,['results/ground_truth/' num2str(i) '_gt.png'],'png');
+    imwrite(deblur,['results/deblurred/' num2str(i) '_out.png'],'png');
     out = imfuse(blur,deblur,'montage');
     imshow(out);
     writeVideo(writer,out);
