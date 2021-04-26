@@ -30,7 +30,7 @@ This work uses an pix2pix[2] style Generative Adverserial Network. They take a p
 
 #### Result
 To the left is the original data and to the right is the deblurred.
-![output](https://github.com/dlteif/CS585-final-project/blob/master/data/ms_blind_deconv.gif)
+![output](./deblur_gan/results/recycle_deblur.gif)
 
 
 
