@@ -22,5 +22,23 @@ To the left is the original data and to the right is the deblurred.
 
 
 ## DL Methods
-### 1. DeblurGAN
+### 1. DeblurGANv2[1](code) 
+
+This work uses an pix2pix[2] style Generative Adverserial Network. They take a pre-trained network, and apply a Feature Pyramid Network [3] on top of it, as shown below. They use  perceptual,adverserial, and mean-squared error losses to train on the Go-Pro dataset, where they have high-resolution/blurry pairs. We take such a pretrained network and apply it to the recycling data. 
+
+![](./doc_images/pipeline.jpg)
+
+#### Result
+To the left is the original data and to the right is the deblurred.
+![output](https://github.com/dlteif/CS585-final-project/blob/master/data/ms_blind_deconv.gif)
+
+
+
+### References
+[1]
+[2]
+[3]
+
+
+
 
