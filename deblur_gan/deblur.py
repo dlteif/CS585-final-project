@@ -90,7 +90,7 @@ def process_video(pairs, predictor, output_dir, frames_to_process=100):
         total_frame_num = int(video_in.get(cv2.CAP_PROP_FRAME_COUNT))
         video_out = cv2.VideoWriter(output_filepath, cv2.VideoWriter_fourcc(*'MP4V'), fps, (width * 2, height))
         tqdm.write(f'process {video_filepath} to {output_filepath}, {fps}fps, resolution: {width}x{height}')
-        for frame_num in tqdm(range(1000), desc=video_filename):
+        for frame_num in tqdm(range(20), desc=video_filename):
         #for frame_num in tqdm(range(total_frame_num), desc=video_filename):
             res, img = video_in.read()
             if not res:
@@ -98,6 +98,14 @@ def process_video(pairs, predictor, output_dir, frames_to_process=100):
             img_color = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             pred = predictor(img_color, mask)
             pred = cv2.cvtColor(pred, cv2.COLOR_RGB2BGR)
+            cv2.imwrite(os.path.join(output_dir,'deblurred','{}_out.png'.format(frame_num)),pred)
+            cv2.imwrite(os.path.join(output_dir,'ground_truth','{}_gt.png'.format(frame_num)),img)
+            # if frame_num % 50 == 0:
+            #    gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            #    gray_pred = cv2.cvtColor(pred, cv2.COLOR_BGR2GRAY)
+            #    img_metric = cv2.Laplacian(gray_img, cv2.CV_64F).var()
+            #    pred_metric = cv2.Laplacian(gray_pred, cv2.CV_64F).var()
+            #    print('Image:{} Pred:{}'.format(img_metric,pred_metric))
             video_out.write(np.hstack((img, pred)))
         video_in.release()
         video_out.release()
