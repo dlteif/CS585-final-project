@@ -53,10 +53,12 @@ opts.use_ycbcr = 1;
 %fn = 'mukta.jpg'; opts.kernel_size = 27; opts.use_ycbcr = 0; opts.min_lambda = 200;
 
 % From Cho/Lee et. al. SIGGRAPH Asia 2009
-vidObj = VideoReader('../../data/conveyerbelt.mp4');
-writer = VideoWriter('../../data/ms_blind_conv/output.mp4');
+vidObj = VideoReader('original.mp4');
+writer = VideoWriter('ms_blind_conv/output.mp4');
 open(writer);
 i = 0;
+filename = 'ms_blind_conv/output.gif';
+endFrame = 2 * vidObj.FrameRate;
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     [blur, deblur, kernel, opts] = ms_blind_deconv(vidFrame, opts);
@@ -65,7 +67,7 @@ while hasFrame(vidObj)
     writeVideo(writer,out);
     %pause(1/vidObj.FrameRate);
     i = i + 1;
-    if i > 20
+    if i > endFrame
         break;
     end;
 end;
