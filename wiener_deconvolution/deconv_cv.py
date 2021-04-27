@@ -26,6 +26,7 @@ Examples:
 # Python 2/3 compatibility
 from __future__ import print_function
 
+import os
 import numpy as np
 import cv2
 
@@ -69,6 +70,9 @@ if __name__ == '__main__':
         fn = './sample.png'
 
     win = 'deconvolution'
+
+    if not os.path.exists('output_frames'):
+        os.makedirs('output_frames')
 
     vidcap = cv2.VideoCapture('original.mp4')
     success, image = vidcap.read()
@@ -174,7 +178,8 @@ if __name__ == '__main__':
         res_rgb = np.roll(res_rgb, -kh//2, 0)
         res_rgb = np.roll(res_rgb, -kw//2, 1)
         #cv2.imshow(win, res_rgb)
-        cv2.imwrite("./results2/frame%d.jpg" % count, res_rgb*300)
+
+        cv2.imwrite("./results/frame%d.jpg" % count, res_rgb*300)
         result.write((res_rgb*300).astype(np.uint8))
 
         print('Read a new frame: ', success)
