@@ -18,6 +18,7 @@ The main script to run is [norm_sparsity_code/test_blind_deconv.m](https://githu
 
 #### Result
 To the left is the original data and to the right is the deblurred.
+
 ![output](https://github.com/dlteif/CS585-final-project/blob/master/data/ms_blind_deconv.gif)
 
 ### 2. Wiener Deconvolution: [Definition](https://en.wikipedia.org/wiki/Wiener_deconvolution) [Code] (https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py)
