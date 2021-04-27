@@ -76,6 +76,8 @@ if __name__ == '__main__':
 
     vidcap = cv2.VideoCapture('original.mp4')
     success, image = vidcap.read()
+    vidcap.release()
+    vidcap = cv2.VideoCapture('original.mp4')
     count = 0
 
     # We need to set resolutions.
