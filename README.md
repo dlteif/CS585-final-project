@@ -29,8 +29,10 @@ This work uses an pix2pix[2] style Generative Adverserial Network. They take a p
 ![](./doc_images/pipeline.jpg)
 
 #### Result
-To the left is the original data and to the right is the deblurred.
+To the left is the original data and to the right is the deblurred.We note that GIF's introduce their own artifacts. 
 ![output](./deblur_gan/results/recycle_deblur.gif)
+
+If you'd like to view an mp4 of the results, click [here](https://github.com/dlteif/CS585-final-project/blob/master/deblur_gan/results/recycle_deblur.mp4?raw=true). 
 
 
 
