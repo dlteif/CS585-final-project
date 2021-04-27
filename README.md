@@ -51,7 +51,8 @@ We show laplacians of two sample images below.
 
 <img src="./doc_images/gt_laplacian.png" width="50%">
 
-![](./doc_images/db_laplacian.png)
+<img src="./doc_images/db_laplacian.png" width="50%">
+
 
 Finally, for each input, output pair, we compute the difference of the variance of the Laplacian between blurry and deblurred images. See the pseudocode below for a sample of how it's done:
 
