@@ -1,6 +1,6 @@
 # CS585-final-project: Image Deblurring Applied to Recycling Data
 ### Team: Diala Lteif, Piotr Teterwak, Kubra Eryilmaz
-
+### Presentation Slides [here](https://docs.google.com/presentation/d/1ktci8VXemanA0XGe1cVYAemxsiuS7Nay7Xf1Ar5M2rU/edit?usp=sharing)
 We run and compare available non-DL and DL methods for image deblurring on a video of recycling garbage on a conveyer belt.
 
 ![Original](https://github.com/dlteif/CS585-final-project/blob/master/data/original.gif)
