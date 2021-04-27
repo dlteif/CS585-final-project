@@ -78,6 +78,7 @@ We report numbers for all the methods below:
 
 [3] Lin, Tsung-Yi, et al. "Feature pyramid networks for object detection." Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.
 
+[4] https://www.pyimagesearch.com/2015/09/07/blur-detection-with-opencv/
 
-
+[5] Pech-Pacheco, José Luis, et al. "Diatom autofocusing in brightfield microscopy: a comparative study." Proceedings 15th International Conference on Pattern Recognition. ICPR-2000. Vol. 3. IEEE, 2000.
 
