@@ -52,7 +52,7 @@ To the left is the original data and to the right is the deblurred.
 ## DL Methods
 ### 1. DeblurGANv2: [Paper [1]](https://arxiv.org/abs/1908.03826) [Code](https://github.com/VITA-Group/DeblurGANv2)
 
-This work uses an pix2pix[2] style Generative Adverserial Network. They take a pre-trained network, and apply a Feature Pyramid Network [3] on top of it, as shown below. They use  perceptual,adverserial, and mean-squared error losses to train on the Go-Pro dataset, where they have high-resolution/blurry pairs. Additionally, they use local and global discriminators. We take such a pretrained network and apply it to the recycling data, using the code provided by the authors linked above.  
+This work uses an pix2pix[2] style Generative Adverserial Network. They take a pre-trained network, and apply a Feature Pyramid Network [3] on top of it, as shown below. They use  perceptual,adverserial, and mean-squared error losses to train on the Go-Pro dataset[10], where they have high-resolution/blurry pairs. Additionally, they use local and global discriminators. We take such a pretrained network and apply it to the recycling data, using the code provided by the authors linked above.  
 
 ![](./doc_images/pipeline.jpg)
 
@@ -103,6 +103,8 @@ We report numbers for all the methods below:
 | Blind Deconvolution   | 27.16        |
 | Wiener Deconvolution w/Motion Blur kernel | **34.24** | 
 
+**According to this metric, Wiener Deconvolution is best followed by Blind Deconvolution and DeblurGANv2. However, this contradicts our qualitative assesment below. We believe that the artifacts introduced by Blind Deconvolution introduce some high frequency noise without actually sharpening the frame.** 
+
 ### Qualitative Evaluation
 
 To further compare the tested methods, we present the outputs of the 3 different methods side by side along with the ground truth over 20 frames sharpness, artifacts. Below is an example figure in which can easily compare the methods.
@@ -130,6 +132,8 @@ Furthermore, we provide before and after GIFs over the sampled frames for each m
 <br/>
 <br/>
 
+**Perceptually, it appears that Wiener Deconvolution gives the sharpest results, though with some artifacts. DeblurGANv2 is much worse, but with fewer artifacts (though it does add some color in innapropriate places), while Blind Deconvolution is worst.**
+
 Wiener Deconvolution performs the best with respect to sharpness but causes more visible artifacts especially rings and darker colors that can be reduced by proper hyperparameter tuning. Below are the different outputs as a result of varying hyperparameters: 
 ![image](https://user-images.githubusercontent.com/57039745/116219972-35e32900-a71a-11eb-87e7-7ab3f1453028.png)
 
@@ -137,6 +141,10 @@ Wiener Deconvolution performs the best with respect to sharpness but causes more
 ## Conclusions
 
 We run and compare 3 methods for deblurring images applied to recycling data. Some of the challenges we faced with the Wiener Deconvolution method are that it is very sensitive to the hyperparameters used such as the Signal to Noise Ratio (SNR) and Point Spread Function (PSF). The limitations of Blind Deconvolution with Normalized Spasity Measure are its high computational inefficiency as it needs to compute the kernel for each frame in a multiscale way, and the regularizer used is highly non-convex. DeblurGAN on the other hand is limited by the generalization ability of the deep learning model it is applied to.   
+
+## Future Directions
+
+All the current methods are frame-wise, and don't leverage the fact that lots of information is in adjacent frames of a video. If we had more time, it'd be interesting to try and leverage adjacent frames through estimated optical flow, for instance. 
 
 ### References
 [1] Kupyn, Orest, et al. "Deblurgan-v2: Deblurring (orders-of-magnitude) faster and better." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2019.
@@ -156,3 +164,5 @@ We run and compare 3 methods for deblurring images applied to recycling data. So
 [8] https://en.wikipedia.org/wiki/Wiener_deconvolution
 
 [9] https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py
+
+[10] Nah, Seungjun, Tae Hyun Kim, and Kyoung Mu Lee. "Deep multi-scale convolutional neural network for dynamic scene deblurring." Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.
