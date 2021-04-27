@@ -49,7 +49,7 @@ As you can see, it's simply the sum of image second derivatives in the horizonta
 
 We show laplacians of two sample images below. 
 
-![](./doc_images/gt_laplacian.png)
+![](./doc_images/gt_laplacian.png =250x)
 
 ![](./doc_images/db_laplacian.png)
 
