@@ -75,7 +75,7 @@ We use a simple method to evaluate the sharpness of the resulting image; we simp
 
 As you can see, it's simply the sum of image second derivatives in the horizontal and vertical dirctions. In areas where the image is uniform, the second derivatives of the image are 0. However, where the image has edges, the second derivatives of the image are changing very quickly. Therefore, near edges the Laplacian will have non-zero values. Therefore, when there are sharper edges, the variance of the Laplacian will be larger than with an image which has blurry outputs. 
 
-We show laplacians of two sample images below. 
+We show laplacians of two sample images below. **We recommend clicking to look at images closely**.
 
 First, we show the laplacian of the blurry input.
 
@@ -106,6 +106,8 @@ We report numbers for all the methods below:
 **According to this metric, Wiener Deconvolution is best followed by Blind Deconvolution and DeblurGANv2. However, this contradicts our qualitative assesment below. We believe that the artifacts introduced by Blind Deconvolution introduce some high frequency noise without actually sharpening the frame.** 
 
 ### Qualitative Evaluation
+
+**For all qualitative results we recommend clicking for higher resolution.**
 
 To further compare the tested methods, we present the outputs of the 3 different methods side by side along with the ground truth over 20 frames sharpness, artifacts. Below is an example figure in which can easily compare the methods.
 
