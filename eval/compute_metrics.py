@@ -21,8 +21,8 @@ for imgs in zip(ground_truth_imgs,deblurred_imgs):
 gt_laplacian = cv2.Laplacian(gray_gt, cv2.CV_64F)
 db_laplacian = cv2.Laplacian(gray_db, cv2.CV_64F)
 
-gt_laplacian = cv2.normalize(gt_laplacian, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
-db_laplacian = cv2.normalize(db_laplacian, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
+gt_laplacian = cv2.normalize(gt_laplacian, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_64F)
+db_laplacian = cv2.normalize(db_laplacian, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_64F)
 
 cv2.imwrite('../doc_images/gt_laplacian.png', gt_laplacian)
 cv2.imwrite('../doc_images/db_laplacian.png', db_laplacian)
