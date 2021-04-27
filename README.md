@@ -25,9 +25,8 @@ The Wiener filter is the MSE-optimal stationary linear filter for images degrade
 
 Wiener filters are usually applied in the frequency domain. Given a degraded image g(x,y), one takes the Discrete Fourier Transform (DFT) to obtain G(u,v). The original image spectrum is estimated by taking the product of G(u,v) with the Wiener filter W(u,v):
 
-```math
-F(u,v) = W(u,v)G(u,v)
-```
+<img src="./images/filter1.png" >
+
 The inverse DFT is then used to obtain the image estimate from its spectrum. The Wiener filter is defined in terms of these spectra:
 
 ```math
@@ -37,10 +36,7 @@ P_n(u,v): Power specturum of the noise process, obtained by taking the Fourier T
 ```
 The Wiener Filter is:
 
-
-```math
-W(u,v) = \frac{H^*(u,v)}{|H(u,v)|^2 + \frac{P_n(u,v)}{P_s(u,v)}}
-```
+<img src="./images/filter2.png" >
 
 The term $`\frac{P_n}{P_s}`$  can be interpreted as the reciprocal of the signal-to-noise ratio. Where the signal is very strong relative to the noise, $`\frac{P_n}{P_s} \approx 0`$   and the Wiener filter becomes $`H^{-1}(u,v)`$  - the inverse filter for the PSF. Where the signal is very weak, $`\frac{P_n}{P_s}--> \inf`$  and  $`W(u,v) --> 0`$ .
 
