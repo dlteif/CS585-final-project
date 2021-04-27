@@ -179,7 +179,7 @@ if __name__ == '__main__':
         res_rgb = np.roll(res_rgb, -kw//2, 1)
         #cv2.imshow(win, res_rgb)
 
-        cv2.imwrite("./results/frame%d.jpg" % count, res_rgb*300)
+        cv2.imwrite("./output_frames/frame%d.jpg" % count, res_rgb*300)
         result.write((res_rgb*300).astype(np.uint8))
 
         print('Read a new frame: ', success)
