@@ -49,10 +49,15 @@ As you can see, it's simply the sum of image second derivatives in the horizonta
 
 We show laplacians of two sample images below. 
 
-<img src="./doc_images/gt_laplacian.png" width="50%">
+First, we show the laplacian of the blurry input.
 
-<img src="./doc_images/db_laplacian.png" width="50%">
+<img src="./doc_images/gt_laplacian.png" >
 
+Next, we show the laplacian of the deblurred output.
+
+<img src="./doc_images/db_laplacian.png">
+
+It's clear that edges are sharper in the deblurred output, though both are fairly subtle and you need to look closely.
 
 Finally, for each input, output pair, we compute the difference of the variance of the Laplacian between blurry and deblurred images. See the pseudocode below for a sample of how it's done:
 
