@@ -61,6 +61,12 @@ It's clear that edges are sharper in the deblurred output, though both are fairl
 
 Finally, for each input, output pair, we compute the difference of the variance of the Laplacian between blurry and deblurred images. See the pseudocode below for a sample of how it's done:
 
+``` 
+compute_laplacian(output).variance() - compute_laplacian(input).variance().
+```
+
+We do this for 20 input-output pairs, and then take the average. Although we would have liked to run it on more frames, some of our methods are extremely slow. 
+
 We report numbers for all the methods below:
 
 
