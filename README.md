@@ -105,16 +105,9 @@ We report numbers for all the methods below:
 
 ### Qualitative Evaluation
 
-To further compare the tested methods, we conduct a user study where users are presented with outputs of the 3 different methods side by side along with the ground truth over 20 frames and asked to choose the method that they think gave the best output according to sharpness, artifacts,. Below is an example figure in which the users can easily compare the methods.
+To further compare the tested methods, we present the outputs of the 3 different methods side by side along with the ground truth over 20 frames sharpness, artifacts. Below is an example figure in which can easily compare the methods.
 
 <img src='./compared_results/2_out.jpg' width="125%" height="125%">
-
-We do this for 3 users only, given the limited time frame we had. One should take into consideration that all inputs are sampled from the same video, which means that a user is most likely to give the same vote for all presented outputs. We summarize the results in the table below, where the number of votes is tallied for the total frames over all users. A vote for a specific method means that the quality was more evident in this method than in the other two, and there are 60 frames in total.  
-
-| Quality | DeblurGANv2 | Blind Deconvolution | Wiener Deconvolution |
-|---------|-------------|---------------------|----------------------|
-| Sharpness |           |                     |                      |
-| Artifacts |           |                     |                      |
 
 Furthermore, we provide before and after GIFs over the sampled frames for each method for better comparison. 
 <div align="center">
