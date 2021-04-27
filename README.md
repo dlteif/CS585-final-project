@@ -113,23 +113,23 @@ To further compare the tested methods, we present the outputs of the 3 different
 
 <img src='./compared_results/2_out.jpg' width="125%" height="125%">
 
-Furthermore, we provide before and after GIFs over the sampled frames for each method for better comparison. 
+additionally, we provide before and after GIFs over the sampled frames for each method for better comparison. 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116218003-18ad5b00-a718-11eb-8260-40c9578d9bf4.gif" height="50%" width="50%" margin=auto>
 <br/>
-<p>Blind Deconvolution using Normalized Sparsity Measure</p>
+<p><b>Blind Deconvolution using Normalized Sparsity Measure</b></p>
 </div>
 <br/>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116218082-2cf15800-a718-11eb-9ced-1edeaeb443af.gif" height="50%" width="50%" margin=auto>
 <br/>
-<p>DeblurGANv2</p>
+<p><b>DeblurGANv2</b></p>
 </div>
 <br/>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116218163-40042800-a718-11eb-9aa8-b490d8709902.gif" height="50%" width="50%" margin=auto>
 <br/>
-<p>Weiner Deconvolution with Motion Blur Kernel</p>
+<p><b>Weiner Deconvolution with Motion Blur Kernel</b></p>
 </div>
 <br/>
 <br/>
@@ -138,19 +138,19 @@ To better distinguish the methods, we take a closer look at the artifacts produc
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116283986-8e3a1b00-a75a-11eb-84b8-763c2ac088a3.png" height="50%" width="50%" margin=auto>
 <br/>
-<p>Blind Deconvolution Artifacts: Smooth Checkerboard</p>
+<p><b>Blind Deconvolution Artifacts: Smooth Checkerboard</b></p>
 </div>
 <br/>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116284013-95f9bf80-a75a-11eb-9848-37b8b3ff67c4.png" height="50%" width="50%" margin=auto>
 <br/>
-<p>Weiner Deconvolution Artifacts: Ringing</p>
+<p><b>Weiner Deconvolution Artifacts: Ringing</b></p>
 </div>
 <br/>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116284018-98f4b000-a75a-11eb-9fcb-efcf8179a495.png" height="50%" width="50%" margin=auto>
 <br/>
-<p>DeblurGANv2 Artifacts: Hallucinations</p>
+<p><b>DeblurGANv2 Artifacts: Hallucinations</b></p>
 </div>
 <br/>
 
