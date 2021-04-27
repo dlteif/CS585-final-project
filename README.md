@@ -35,6 +35,16 @@ H(u,v): Fourier Transform of the Point Spread Function(PSF)
 P_s(u,v): Power specturum of the signal process, obtained by taking the Fourier Transform of the signal autocorrection
 P_n(u,v): Power specturum of the noise process, obtained by taking the Fourier Transform of the noise autocorrection
 ```
+The Wiener Filter is:
+
+
+```math
+W(u,v) = \frac{H^*(u,v)}{|H(u,v)|^2 + \frac{P_n(u,v)}{P_s(u,v)}}
+```
+
+The term $`\frac{P_n}{P_s}`$  can be interpreted as the reciprocal of the signal-to-noise ratio. Where the signal is very strong relative to the noise, $`\frac{P_n}{P_s} \approx 0`$   and the Wiener filter becomes $`H^{-1}(u,v)`$  - the inverse filter for the PSF. Where the signal is very weak, $`\frac{P_n}{P_s}--> \inf`$  and  $`W(u,v) --> 0`$ .
+
+
 
 
 #### Result
