@@ -107,7 +107,7 @@ We report numbers for all the methods below:
 
 ### Qualitative Evaluation
 
-**For all qualitative results we recommend clicking for higher resolution.**
+**For all qualitative results we recommend clicking for higher resolution. Also, all GIFS have quantized colors, so we recommend looking at both those and the provided non-GIF figure. **
 
 To further compare the tested methods, we present the outputs of the 3 different methods side by side along with the ground truth over 20 frames sharpness, artifacts. Below is an example figure in which can easily compare the methods.
 
