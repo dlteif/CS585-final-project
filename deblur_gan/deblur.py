@@ -126,6 +126,7 @@ def main(img_pattern: str,
     predictor = Predictor(weights_path=weights_path)
 
     os.makedirs(out_dir, exist_ok=True)
+    counter = 0
     if not video:
         for name, pair in tqdm(zip(names, pairs), total=len(names)):
             f_img, f_mask = pair
@@ -136,10 +137,12 @@ def main(img_pattern: str,
             if side_by_side:
                 pred = np.hstack((img, pred))
             pred = cv2.cvtColor(pred, cv2.COLOR_RGB2BGR)
-            cv2.imwrite(os.path.join(out_dir, name),
+            cv2.imwrite(os.path.join(out_dir, '{}.jpg'),
                         pred)
+            counter = counter + 1
     else:
         process_video(pairs, predictor, out_dir)
 
 main('../data/recycle.mp4',video=True, weights_path='../data/fpn_inception.h5', out_dir='../results/')
+#main('../../data/sampled_frames/*',video=False, weights_path='../data/fpn_inception.h5', out_dir='../results/sampled')
 
