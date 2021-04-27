@@ -69,6 +69,12 @@ We do this for 20 input-output pairs, and then take the average. Although we wou
 
 We report numbers for all the methods below:
 
+| Model       | Increase in Variance of Laplacian |
+| ----------- | ----------- |
+| DeblurGANv2      | 7.89       |
+| Blind Deconvolution   | 27.16        |
+| Wiener Deconvolution w/Motion Blur kernel | 34.24 | 
+
 
 
 ### References
