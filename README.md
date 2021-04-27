@@ -123,17 +123,20 @@ We do this for 3 users only, given the limited time frame we had. One should tak
 Furthermore, we provide before and after GIFs over the sampled frames for each method for better comparison. 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116218003-18ad5b00-a718-11eb-8260-40c9578d9bf4.gif" height="50%" width="50%" margin=auto>
-Blind Deconvolution using Normalized Sparsity Measure
+<br/>
+<p>Blind Deconvolution using Normalized Sparsity Measure</p>
 </div>
 <br/>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116218082-2cf15800-a718-11eb-9ced-1edeaeb443af.gif" height="50%" width="50%" margin=auto>
-DeblurGANv2
+<br/>
+<p>DeblurGANv2</p>
 </div>
 <br/>
-<div>
+<div align="center">
 <img src="https://user-images.githubusercontent.com/57039745/116218163-40042800-a718-11eb-9aa8-b490d8709902.gif" height="50%" width="50%" margin=auto>
-Weiner Deconvolution with Motion Blur Kernel
+<br/>
+<p>Weiner Deconvolution with Motion Blur Kernel</p>
 </div>
 <br/>
 <br/>
