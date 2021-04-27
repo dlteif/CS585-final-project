@@ -21,8 +21,8 @@ To the left is the original data and to the right is the deblurred.
 
 ![output](https://github.com/dlteif/CS585-final-project/blob/master/data/ms_blind_deconv.gif)
 
-### 2. Wiener Deconvolution: [Definition](https://en.wikipedia.org/wiki/Wiener_deconvolution) [Code](https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py)
-The Wiener filter is the MSE-optimal stationary linear filter for images degraded by additive noise and blurring. Calculation of the Wiener filter requires the assumption that the signal and noise processes are second-order stationary (in the random process sense).[1] 
+### 2. Wiener Deconvolution: [Definition [8]](https://en.wikipedia.org/wiki/Wiener_deconvolution) [Code [9]](https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py)
+The Wiener filter is the MSE-optimal stationary linear filter for images degraded by additive noise and blurring. Calculation of the Wiener filter requires the assumption that the signal and noise processes are second-order stationary (in the random process sense).[7] 
 
 Wiener filters are usually applied in the frequency domain. Given a degraded image g(x,y), one takes the Discrete Fourier Transform (DFT) to obtain G(u,v). The original image spectrum is estimated by taking the product of G(u,v) with the Wiener filter W(u,v):
 
@@ -48,10 +48,6 @@ To the left is the original data and to the right is the deblurred.
 
 ![original](https://github.com/dlteif/CS585-final-project/blob/master/wiener_deconvolution/original.gif)
 ![output](https://github.com/dlteif/CS585-final-project/blob/master/wiener_deconvolution/output.gif)
-
-### References
-[1]https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/VELDHUIZEN/node15.html
-
 
 ## DL Methods
 ### 1. DeblurGANv2: [Paper [1]](https://arxiv.org/abs/1908.03826) [Code](https://github.com/VITA-Group/DeblurGANv2)
@@ -161,3 +157,9 @@ We run and compare 3 methods for deblurring images applied to recycling data. So
 [5] D. Krishnan, T. Tay and R. Fergus, "Blind deconvolution using a normalized sparsity measure," CVPR 2011, 2011, pp. 233-240, doi: 10.1109/CVPR.2011.5995521. 
 
 [6] Pech-Pacheco, José Luis, et al. "Diatom autofocusing in brightfield microscopy: a comparative study." Proceedings 15th International Conference on Pattern Recognition. ICPR-2000. Vol. 3. IEEE, 2000. 
+
+[7] https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/VELDHUIZEN/node15.html
+
+[8] https://en.wikipedia.org/wiki/Wiener_deconvolution
+
+[9] https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py
