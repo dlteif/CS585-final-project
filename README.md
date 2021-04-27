@@ -73,7 +73,7 @@ We report numbers for all the methods below:
 | ----------- | ----------- |
 | DeblurGANv2      | 7.89       |
 | Blind Deconvolution   | 27.16        |
-| Wiener Deconvolution w/Motion Blur kernel | 34.24 | 
+| Wiener Deconvolution w/Motion Blur kernel | **34.24** | 
 
 
 
