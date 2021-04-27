@@ -42,6 +42,7 @@ We do both a qualitative and quantitative evaluation of the method.
 ### Quantitative Evaluation
 
 We use a simple method to evaluate the sharpness of the resulting image; we simply compute the variance of the Laplacian of the image [4,5]. The laplacian of an image is given below:
+
 ![](./doc_images/eqnlog1.gif)
 
 As you can see, it's simply the sum of image second derivatives in the horizontal and vertical dirctions. In areas where the image is uniform, the second derivatives of the image are 0. However, where the image has edges, the second derivatives of the image are changing very quickly. Therefore, near edges the Laplacian will have non-zero values. Therefore, when there are sharper edges, the variance of the Laplacian will be larger than with an image which has blurry outputs. 
