@@ -6,7 +6,7 @@ We run and compare available non-DL and DL methods for image deblurring on a vid
 ![Original](https://github.com/dlteif/CS585-final-project/blob/master/data/original.gif)
 
 ## Non-DL Methods
-### 1. Blind Deconvolution Using a Normalized Sparsity Measure: [Paper](https://dilipkay.files.wordpress.com/2019/04/priors_cvpr11.pdf) [Code](https://www.dropbox.com/s/wy0yr9zfix3o9xi/norm_sparsity_code.zip?dl=0)
+### 1. Blind Deconvolution Using a Normalized Sparsity Measure: [Paper [5]](https://dilipkay.files.wordpress.com/2019/04/priors_cvpr11.pdf) [Code](https://www.dropbox.com/s/wy0yr9zfix3o9xi/norm_sparsity_code.zip?dl=0)
 This work uses a regularization function which is the ratio of the <i>l1</i> norm to the <i>l2</i> norm on the high frequencies of an image.
 This ratio is inversely proportional to blur in the image, so the stronger the blur, the lower the ratio is. On the other hand, added noise increases the ratio. The <i>l1/l2</i> function is considered a sparsity measure, and it is a normalized version of <i>l1</i>, making it scale invariant. <br/>
 The overall algorithm of this method is described below:
@@ -37,7 +37,7 @@ If you'd like to view an mp4 of the results, click [here](https://github.com/dlt
 
 ## Evaluation
 
-We do both a qualitative and quantitative evaluation of the method. 
+We do both a qualitative and quantitative evaluation of the methods. 
 
 ### Quantitative Evaluation
 
@@ -75,6 +75,19 @@ We report numbers for all the methods below:
 | Blind Deconvolution   | 27.16        |
 | Wiener Deconvolution w/Motion Blur kernel | **34.24** | 
 
+### Qualitative Evaluation
+
+To further compare the tested methods, we conduct a user study where users are presented with outputs of the 3 different methods side by side along with the ground truth over 20 frames and asked to choose the method that they think gave the best output according to sharpness, artifacts,. Below is an example figure in which the users can easily compare the methods.
+
+<img src='./compared_results/2_out.jpg' width="125%" height="125%">
+
+We do this for 3 users only, given the limited time frame we had. One should take into consideration that all inputs are sampled from the same video, which means that a user is most likely to give the same vote for all presented outputs. We summarize the results in the table below, where the number of votes is tallied for the total frames over all users. There are 60 frames in total.  
+
+| Quality | DeblurGANv2 | Blind Deconvolution | Wiener Deconvolution |
+|---------|-------------|---------------------|----------------------|
+| Sharpness |           |                     |                      |
+| Artifacts |           |                     |                      |
+
 
 
 ### References
@@ -86,5 +99,6 @@ We report numbers for all the methods below:
 
 [4] https://www.pyimagesearch.com/2015/09/07/blur-detection-with-opencv/
 
-[5] Pech-Pacheco, José Luis, et al. "Diatom autofocusing in brightfield microscopy: a comparative study." Proceedings 15th International Conference on Pattern Recognition. ICPR-2000. Vol. 3. IEEE, 2000.
+[5] D. Krishnan, T. Tay and R. Fergus, "Blind deconvolution using a normalized sparsity measure," CVPR 2011, 2011, pp. 233-240, doi: 10.1109/CVPR.2011.5995521. 
 
+[6] Pech-Pacheco, José Luis, et al. "Diatom autofocusing in brightfield microscopy: a comparative study." Proceedings 15th International Conference on Pattern Recognition. ICPR-2000. Vol. 3. IEEE, 2000. 
