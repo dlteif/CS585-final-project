@@ -94,7 +94,7 @@ if __name__ == '__main__':
                              1, size)
     count = 0
 
-    while success:
+    for _ in range(20):
 
         #success, image = vidcap.read()
         #success, img_bw = vidcap.read(fn, 0)
@@ -138,6 +138,7 @@ if __name__ == '__main__':
         d = 16 # cv2.getTrackbarPos('d', win)
         print(d)
         noise = 0.03981071705534971 #10**(-0.1*cv2.getTrackbarPos('SNR (db)', win))
+        #noise = 10**(-0.1*4)
         print(noise)
 
         #16
@@ -147,7 +148,7 @@ if __name__ == '__main__':
         #     psf = defocus_kernel(d)
         # else:
         psf = motion_kernel(ang, d)
-        cv2.imshow('psf', psf)
+        #cv2.imshow('psf', psf)
 
         psf /= psf.sum()
         psf_pad = np.zeros_like(img_bw)
@@ -179,7 +180,7 @@ if __name__ == '__main__':
         res_rgb = np.roll(res_rgb, -kw//2, 1)
         #cv2.imshow(win, res_rgb)
 
-        cv2.imwrite("./results/frame%d.jpg" % count, res_rgb*300)
+        cv2.imwrite("./output_frames/frame%d.jpg" % count, res_rgb*300)
         result.write((res_rgb*300).astype(np.uint8))
 
         print('Read a new frame: ', success)
