@@ -41,7 +41,7 @@ We do both a qualitative and quantitative evaluation of the method.
 
 ### Quantitative Evaluation
 
-We use a simple method to evaluate the sharpness of the resulting image; we simply compute the variance of the Laplacian of the image [4,5]. The laplacian of an image is given below:
+We use a simple method to evaluate the sharpness of the resulting image; we simply compute the variance of the Laplacian of the image [4,5]. The laplacian of an image is given below, for image intensity I:
 
 ![](./doc_images/eqnlog1.gif)
 
