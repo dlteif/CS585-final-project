@@ -21,7 +21,7 @@ To the left is the original data and to the right is the deblurred.
 
 ![output](https://github.com/dlteif/CS585-final-project/blob/master/data/ms_blind_deconv.gif)
 
-### 2. Wiener Deconvolution: [Definition](https://en.wikipedia.org/wiki/Wiener_deconvolution) [Code] (https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py)
+### 2. Wiener Deconvolution: [Definition](https://en.wikipedia.org/wiki/Wiener_deconvolution) [Code](https://github.com/michal2229/dft-wiener-deconvolution-with-psf/blob/master/deconv_cv.py)
 The Wiener filter is the MSE-optimal stationary linear filter for images degraded by additive noise and blurring. Calculation of the Wiener filter requires the assumption that the signal and noise processes are second-order stationary (in the random process sense).[1] 
 
 Wiener filters are usually applied in the frequency domain. Given a degraded image g(x,y), one takes the Discrete Fourier Transform (DFT) to obtain G(u,v). The original image spectrum is estimated by taking the product of G(u,v) with the Wiener filter W(u,v):
@@ -45,6 +45,7 @@ K(u,v) = P_n(u,v)/P_s(u,v)
 
 #### Result
 To the left is the original data and to the right is the deblurred.
+
 ![original](https://github.com/dlteif/CS585-final-project/blob/master/wiener_deconvolution/original.gif)
 ![output](https://github.com/dlteif/CS585-final-project/blob/master/wiener_deconvolution/output.gif)
 
