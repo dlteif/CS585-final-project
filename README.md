@@ -38,12 +38,12 @@ The Wiener Filter is:
 
 <img src="./wiener_deconvolution/images/filter2.png" >
 
-The term $`\frac{P_n}{P_s}`$  can be interpreted as the reciprocal of the signal-to-noise ratio. Where the signal is very strong relative to the noise, $`\frac{P_n}{P_s} \approx 0`$   and the Wiener filter becomes $`H^{-1}(u,v)`$  - the inverse filter for the PSF. Where the signal is very weak, $`\frac{P_n}{P_s}--> \inf`$  and  $`W(u,v) --> 0`$ .
-
-
-
+```math
+K(u,v) = P_n(u,v)/P_s(u,v)
+```
 
 #### Result
+To the left is the original data and to the right is the deblurred.
 ![original](https://github.com/dlteif/CS585-final-project/blob/master/wiener_deconvolution/original.gif)
 ![output](https://github.com/dlteif/CS585-final-project/blob/master/wiener_deconvolution/output.gif)
 
