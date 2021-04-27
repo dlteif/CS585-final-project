@@ -37,12 +37,12 @@ opts.x_out_iter = 2;
 
 % maximum number of x/k alternations per level; this is a trade-off
 % between performance and quality.
-opts.xk_iter = 30;
+opts.xk_iter = 21;
 
 % non-blind settings
 opts.nb_lambda = 3000;
 opts.nb_alpha = 1.0;
-opts.use_ycbcr = 1;
+opts.use_ycbcr = 0;
 
 % Note that the min_lambda parameter should be varied for different images to
 % give better results.
@@ -53,29 +53,19 @@ opts.use_ycbcr = 1;
 %fn = 'mukta.jpg'; opts.kernel_size = 27; opts.use_ycbcr = 0; opts.min_lambda = 200;
 
 % From Cho/Lee et. al. SIGGRAPH Asia 2009
-vidObj = VideoReader('data/original.mp4');
-writer = VideoWriter('data/ms_blind_conv/out.mp4');
-open(writer);
-i = 0;
-frpath = ['results/ground_truth/' num2str(i) '_gt.png'];
-fprintf('%s\n', frpath);
-filename = 'data/ms_blind_conv/output.gif';
-endFrame = 2 * vidObj.FrameRate;
-while hasFrame(vidObj)
-    vidFrame = readFrame(vidObj);
-    [blur, deblur, kernel, opts] = ms_blind_deconv(vidFrame, opts);
-    imwrite(vidFrame,['results/ground_truth/' num2str(i) '_gt.png'],'png');
-    imwrite(deblur,['results/deblurred/' num2str(i) '_out.png'],'png');
+
+Files = dir('data/sampled_frames/*.png');
+for i=1:length(Files)
+    filename = ['data/sampled_frames/' Files(i).name];
+    fprintf('%s %s\n', filename, mat2str(isstring(filename)));
+    [blur, deblur, kernel, opts] = ms_blind_deconv(filename, opts);
+    %imwrite(deblur,['results/ground_truth/' num2str(i) '_gt.png'],'png');
+    imwrite(deblur,['data/sampled_deblurred/' num2str(i) '_out.png'],'png');
     out = imfuse(blur,deblur,'montage');
     imshow(out);
-    writeVideo(writer,out);
-    %pause(1/vidObj.FrameRate);
-    i = i + 1;
-    if i > endFrame
-        break;
-    end;
+    
 end;
-close(writer);
+
 %fn = '../../data/frames/frame1.jpg'; opts.kernel_size = 31;
 
 %fn = '/misc/FergusGroup/dilip/BlurrImages_UTubingen/Blurry3_8.png';
