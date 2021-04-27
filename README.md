@@ -134,11 +134,30 @@ Furthermore, we provide before and after GIFs over the sampled frames for each m
 <br/>
 <br/>
 
-**Perceptually, it appears that Wiener Deconvolution gives the sharpest results, though with some artifacts. DeblurGANv2 is much worse, but with fewer artifacts (though it does add some color in innapropriate places), while Blind Deconvolution is worst.**
+To better distinguish the methods, we take a closer look at the artifacts produced by each. 
+<div align="center">
+<img src="https://user-images.githubusercontent.com/57039745/116283986-8e3a1b00-a75a-11eb-84b8-763c2ac088a3.png" height="50%" width="50%" margin=auto>
+<br/>
+<p>Blind Deconvolution Artifacts: Smooth Checkerboard</p>
+</div>
+<br/>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/57039745/116284013-95f9bf80-a75a-11eb-9848-37b8b3ff67c4.png" height="50%" width="50%" margin=auto>
+<br/>
+<p>Weiner Deconvolution Artifacts: Ringing</p>
+</div>
+<br/>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/57039745/116284018-98f4b000-a75a-11eb-9fcb-efcf8179a495.png" height="50%" width="50%" margin=auto>
+<br/>
+<p>DeblurGANv2 Artifacts: Hallucinations</p>
+</div>
+<br/>
 
-Wiener Deconvolution performs the best with respect to sharpness but causes more visible artifacts especially rings and darker colors that can be reduced by proper hyperparameter tuning. Below are the different outputs as a result of varying hyperparameters: 
+Furthermore, we evaluate the Wiener Deconvolution algorithm with varying hyperparameters and display the results below.
 ![image](https://user-images.githubusercontent.com/57039745/116219972-35e32900-a71a-11eb-87e7-7ab3f1453028.png)
 
+**Perceptually, it appears that Wiener Deconvolution with appropriate and carefully tuned hyperparameters gives the sharpest results, though with some artifacts. DeblurGANv2 is much worse, but with fewer artifacts (though it does add some color in innapropriate places), while Blind Deconvolution is worst.**
 
 ## Conclusions
 
