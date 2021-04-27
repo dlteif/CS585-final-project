@@ -113,14 +113,25 @@ To further compare the tested methods, we conduct a user study where users are p
 
 <img src='./compared_results/2_out.jpg' width="125%" height="125%">
 
-We do this for 3 users only, given the limited time frame we had. One should take into consideration that all inputs are sampled from the same video, which means that a user is most likely to give the same vote for all presented outputs. We summarize the results in the table below, where the number of votes is tallied for the total frames over all users. There are 60 frames in total.  
+We do this for 3 users only, given the limited time frame we had. One should take into consideration that all inputs are sampled from the same video, which means that a user is most likely to give the same vote for all presented outputs. We summarize the results in the table below, where the number of votes is tallied for the total frames over all users. A vote for a specific method means that the quality was more evident in this method than in the other two, and there are 60 frames in total.  
 
 | Quality | DeblurGANv2 | Blind Deconvolution | Wiener Deconvolution |
 |---------|-------------|---------------------|----------------------|
 | Sharpness |           |                     |                      |
 | Artifacts |           |                     |                      |
 
+Furthermore, we provide before and after GIFs over the sampled frames for each method for better comparison. 
+![blind_deconv](https://user-images.githubusercontent.com/57039745/116218003-18ad5b00-a718-11eb-8260-40c9578d9bf4.gif)
+![deblur_gan](https://user-images.githubusercontent.com/57039745/116218082-2cf15800-a718-11eb-9ced-1edeaeb443af.gif)
+![wiener_deconv](https://user-images.githubusercontent.com/57039745/116218163-40042800-a718-11eb-9aa8-b490d8709902.gif)
 
+Furthermore, Wiener Deconvolution performs the best with respect to sharpness but causes more visible artifacts especially rings and darker colors that can be reduced by proper hyperparameter tuning.  
+![image](https://user-images.githubusercontent.com/57039745/116219972-35e32900-a71a-11eb-87e7-7ab3f1453028.png)
+
+
+## Conclusions
+
+We run and compare 3 methods for deblurring images applied to recycling data. Some of the challenges we faced with the Wiener Deconvolution method are that it is very sensitive to the hyperparameters used such as the Signal to Noise Ratio (SNR) and Point Spread Function (PSF). The limitations of Blind Deconvolution with Normalized Spasity Measure are its high computational inefficiency as it needs to compute the kernel for each frame in a multiscale way, and the regularizer used is highly non-convex. DeblurGAN on the other hand is limited by the generalization ability of the deep learning model it is applied to.   
 
 ### References
 [1] Kupyn, Orest, et al. "Deblurgan-v2: Deblurring (orders-of-magnitude) faster and better." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2019.
