@@ -41,7 +41,7 @@ We do both a qualitative and quantitative evaluation of the method.
 
 ### Quantitative Evaluation
 
-We use a simple method to evaluate the sharpness of the resulting image; we simply compute the variance of the Laplacian of the image [4,5]. The laplacian of an image is given below:
+We use a simple method to evaluate the sharpness of the resulting image; we simply compute the variance of the Laplacian of the image [4,5]. The laplacian of an image is given below, for image intensity I:
 
 ![](./doc_images/eqnlog1.gif)
 
@@ -49,12 +49,23 @@ As you can see, it's simply the sum of image second derivatives in the horizonta
 
 We show laplacians of two sample images below. 
 
-<img src="./doc_images/gt_laplacian.png" width="50%">
+First, we show the laplacian of the blurry input.
 
-<img src="./doc_images/db_laplacian.png" width="50%">
+<img src="./doc_images/gt_laplacian.png" >
 
+Next, we show the laplacian of the deblurred output.
+
+<img src="./doc_images/db_laplacian.png">
+
+It's clear that edges are sharper in the deblurred output, though both are fairly subtle and you need to look closely.
 
 Finally, for each input, output pair, we compute the difference of the variance of the Laplacian between blurry and deblurred images. See the pseudocode below for a sample of how it's done:
+
+``` 
+compute_laplacian(output).variance() - compute_laplacian(input).variance().
+```
+
+We do this for 20 input-output pairs, and then take the average. Although we would have liked to run it on more frames, some of our methods are extremely slow. 
 
 We report numbers for all the methods below:
 
@@ -67,6 +78,7 @@ We report numbers for all the methods below:
 
 [3] Lin, Tsung-Yi, et al. "Feature pyramid networks for object detection." Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.
 
+[4] https://www.pyimagesearch.com/2015/09/07/blur-detection-with-opencv/
 
-
+[5] Pech-Pacheco, José Luis, et al. "Diatom autofocusing in brightfield microscopy: a comparative study." Proceedings 15th International Conference on Pattern Recognition. ICPR-2000. Vol. 3. IEEE, 2000.
 
