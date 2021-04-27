@@ -18,6 +18,12 @@ for imgs in zip(ground_truth_imgs,deblurred_imgs):
     metric.append(db_metric - gt_metric)
 
 
+gt_laplacian = cv2.Laplacian(gray_gt, cv2.CV_64F)
+db_laplacian = cv2.Laplacian(gray_db, cv2.CV_64F)
+
+cv2.imwrite('gt_laplacian.png', gt_laplacian)
+cv2.imwrite('db_laplacian.png', db_laplacian)
+
 average_metric = sum(metric)/len(metric)
 
 print('Average Improvement: {}'.format(average_metric))
