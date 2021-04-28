@@ -153,6 +153,8 @@ To better distinguish the methods, we take a closer look at the artifacts produc
 </div>
 <br/>
 
+The ringing in Wiener Deconvolution is because some frequencies are suppressed by the filtering operation, resulting in the effect described [here](http://mriquestions.com/gibbs-artifact.html).
+
 Furthermore, we evaluate the Wiener Deconvolution algorithm with varying hyperparameters and display the results below.
 ![image](https://user-images.githubusercontent.com/57039745/116219972-35e32900-a71a-11eb-87e7-7ab3f1453028.png)
 
