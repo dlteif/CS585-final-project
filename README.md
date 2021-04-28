@@ -100,7 +100,7 @@ We report numbers for all the methods below:
 | ----------- | ----------- |
 | DeblurGANv2      | 7.89       |
 | Blind Deconvolution   | 27.16        |
-| Wiener Deconvolution w/Motion Blur kernel | **34.24** | 
+| Wiener Deconvolution w/Motion Blur kernel | **35.38** | 
 
 **According to this metric, Wiener Deconvolution is best followed by Blind Deconvolution and DeblurGANv2. However, this contradicts our qualitative assesment below. We believe that the artifacts introduced by Blind Deconvolution introduce some high frequency noise without actually sharpening the frame.** 
 
