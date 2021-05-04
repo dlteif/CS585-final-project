@@ -12,7 +12,8 @@ If you'd like to view an mp4 of the results, click [here](https://github.com/dlt
 
 #### How to Run
 
-```bash setup_deblurgan.sh
+```
+   bash setup_deblurgan.sh
    ipython deblur.py
 ```
 This clones the original repo, downloads needed data, and runs an inference script.
