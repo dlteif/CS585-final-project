@@ -5,6 +5,13 @@ We run and compare available non-DL and DL methods for image deblurring on a vid
 
 ![Original](https://github.com/dlteif/CS585-final-project/blob/master/data/original.gif)
 
+
+###How To Run
+
+Each method has it's own directory in the Github repo, with associated README with detailed instructions. 
+
+The evaluation metrics are computed in the 'compute_metrics.py' in the 'eval' directory. 
+
 ## Non-DL Methods
 ### 1. Blind Deconvolution Using a Normalized Sparsity Measure: [Paper [5]](https://dilipkay.files.wordpress.com/2019/04/priors_cvpr11.pdf) [Code](https://www.dropbox.com/s/wy0yr9zfix3o9xi/norm_sparsity_code.zip?dl=0)
 This work uses a regularization function which is the ratio of the <i>l1</i> norm to the <i>l2</i> norm on the high frequencies of an image.
