@@ -6,7 +6,7 @@ We run and compare available non-DL and DL methods for image deblurring on a vid
 ![Original](https://github.com/dlteif/CS585-final-project/blob/master/data/original.gif)
 
 
-###How To Run
+### How To Run
 
 Each method has it's own directory in the Github repo, with associated README with detailed instructions. 
 
